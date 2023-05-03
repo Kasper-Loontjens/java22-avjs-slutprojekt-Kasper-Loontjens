@@ -1,0 +1,52 @@
+{
+    "name":"",
+    "index":0,
+    "coins":20,
+    "cards":[
+        {
+            "name":"Shortbow",
+            "imgUrl":"https://firebasestorage.googleapis.com/v0/b/cardshop-260a1.appspot.com/o/Bow.jpg?alt=media&token=f7ee8707-7da5-4b71-867a-7e672a0cf3ab",
+            "cost":5,
+            "stock":1,
+            "bought":0,
+            "inBasket":0,
+            "i":0
+        },
+        {
+            "name":"Dragons Indomitable Scales",
+            "imgUrl":"https://firebasestorage.googleapis.com/v0/b/cardshop-260a1.appspot.com/o/Dragons%20armored%20scales.jpg?alt=media&token=08b5a1f7-4386-442a-8c60-b5975866aabf",
+            "cost":2,
+            "stock":3,
+            "bought":0,
+            "inBasket":0,
+            "i":1
+        },
+        {
+            "name":"Dragons Fiery Breath",
+            "imgUrl":"https://firebasestorage.googleapis.com/v0/b/cardshop-260a1.appspot.com/o/Fiery%20breath.jpg?alt=media&token=c2f337af-81cf-4499-a77c-ca2a13e81f0b",
+            "cost":3,
+            "stock":2,
+            "bought":0,
+            "inBasket":0,
+            "i":2
+        },
+        {
+            "name":"Dragons Terrible Claws",
+            "imgUrl":"https://firebasestorage.googleapis.com/v0/b/cardshop-260a1.appspot.com/o/Terrible%20claws.jpg?alt=media&token=4ce0517a-ccf4-45fd-b7dc-cc6014364164",
+            "cost":1,
+            "stock":4,
+            "bought":0,
+            "inBasket":0,
+            "i":3
+        },
+        {
+            "name":"Sword",
+            "imgUrl":"https://firebasestorage.googleapis.com/v0/b/cardshop-260a1.appspot.com/o/sword.jpg?alt=media&token=fedf0d71-f73b-4c5a-9323-69c3917f54bf",
+            "cost":5,
+            "stock":1,
+            "bought":0,
+            "inBasket":0,
+            "i":4
+        }
+    ]
+}
