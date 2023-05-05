@@ -1,8 +1,9 @@
 export default function Header({ setCurrentPage , nrInBasket, user, coinsToSpend}){
-    
+    // Changes the the page between libraby, shop and basket
     function handleSetPage(event){
         setCurrentPage(event.target.getAttribute("val")) 
     }
+    // Shows name, amount of coins the user has and buttons to switch pages
     return(
         <div className="headerDiv">
             {user.coins >= 0 && 

@@ -1,7 +1,8 @@
 import { getFirebase, patchFirebase } from "../js/htmlRequest.js";
 import { useEffect, useState } from 'react'
-import newUser from '../assets/newUser.json'
 
+// template for creating new user
+import newUser from '../assets/newUser.json'
 
 
 export default function LoginPage({user, setUser, setIsLoggedIn}){
@@ -9,7 +10,7 @@ export default function LoginPage({user, setUser, setIsLoggedIn}){
     const [allFirebase, setAllFirebase] = useState("");
     const tempNewUser = newUser;
 
-
+    // Gets the data from firebase when page is loaded
     useEffect(
         ()=>{
             getFirebase("https://cardshop-260a1-default-rtdb.europe-west1.firebasedatabase.app/users/.json")
@@ -19,7 +20,8 @@ export default function LoginPage({user, setUser, setIsLoggedIn}){
             })
         },[]
     )
-
+    
+    // Shows/maps all the customers in the database
     function logFireUsers(data){
         if(Array.isArray(data)){
             const newUsers = data.map(u => {return(
@@ -30,12 +32,14 @@ export default function LoginPage({user, setUser, setIsLoggedIn}){
         }
     }
 
+    // Lets the user login 
     let tempLoginName = ""
     function loginHandle(event){
         event.preventDefault();
         console.log(tempLoginName);
         console.log(allFirebase)
         
+        // If user exist as customer loggs in as that user, if not this creates a new user/customer and saves it to database
         if (!checkLogin(allFirebase)){
 
             tempNewUser.name = tempLoginName
@@ -49,6 +53,7 @@ export default function LoginPage({user, setUser, setIsLoggedIn}){
         event.target.reset();
     }
 
+    // Checks if the user exist as a previous customer, if they do it loggs in as that user 
     function checkLogin(firebaseUsers){
         let check = false
         firebaseUsers.forEach(element => {
@@ -62,12 +67,12 @@ export default function LoginPage({user, setUser, setIsLoggedIn}){
         return check
     }
 
-
+    // Holds users name written by user in form
     function nameHandle(event){
         tempLoginName = event.target.value
     }  
 
-
+    // Shows a form for logging in aswell as all customers in database
     return(
         <div className="loginForm">
             <form onSubmit={loginHandle}>

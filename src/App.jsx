@@ -6,13 +6,17 @@ import BasketPage from './components/basketPage.jsx'
 import './App.css'
 import CardLibrary from './components/cardLibrary.jsx'
 
+// App holds all the pages, creating a onePage site
 function App() {
+
   const [user, setUser] = useState("")
   const [isLoggedIn , setIsLoggedIn] = useState(false)
   const [currentPage, setCurrentPage] = useState("productPage")
   const [nrInBasket, setNrInBasket ] = useState(0)
   const [coinsToSpend, setCoinsToSpend] = useState(0)
 
+  // Depending on if the user is logged in or not the page will be showing the loggin page,
+  // If the user is logged in they can switch pages between store, library and basket.
   return (
    <div className='appDiv'>
     <Header setCurrentPage={setCurrentPage} nrInBasket={nrInBasket} user={user} coinsToSpend={coinsToSpend}/>

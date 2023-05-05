@@ -5,7 +5,7 @@ export default function BasketPage({setUser, user, setNrInBasket, coinsToSpend, 
 
     const [message, setMessage] = useState("")
     
-
+    // Maps out all the cards the user has put in their basket
     const listItems = user.cards.map(c =>
         {if(c.inBasket > 0)
         return (
@@ -16,6 +16,8 @@ export default function BasketPage({setUser, user, setNrInBasket, coinsToSpend, 
         )
         }
     )
+
+    // Removes all the cards the user has put in basket, and the current price for all the cards in basket
     function handleRestore(event){
         const tempUser = user
         tempUser.cards.forEach(card => {
@@ -27,6 +29,8 @@ export default function BasketPage({setUser, user, setNrInBasket, coinsToSpend, 
         setUser(tempUser)
         setCurrentPage("productPage")
     }
+
+    // Adds the cards the user wants to buy to their library, spends the coins and uppdates the user on the database
     function handlePurchase(){
         const tempUser = user
         tempUser.cards.forEach(card => {
@@ -45,6 +49,7 @@ export default function BasketPage({setUser, user, setNrInBasket, coinsToSpend, 
          
     }
 
+    // Shows collective price of all cards in basket, all cards user wants to buy, and buttons for buying or reseting all cards in basket
     return(
         <div className="basketDiv">
             {listItems}

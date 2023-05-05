@@ -1,8 +1,9 @@
 import AProduct from "./aProduct.jsx";
 export default function ProductPage({setUser,user, nrInBasket, setNrInBasket, coinsToSpend, setCoinsToSpend}){
     
+    // When The image of a product is clicked it will add that card to the basket if the user has enought coins to spend
+    // The cost of all the cards in the basket will also be uppdated
     function handleClick(event){
-        // console.log(event.target.getAttribute("alt"))
         const tempUser = user
         const cardIndex = event.target.getAttribute("index")
         
@@ -15,13 +16,12 @@ export default function ProductPage({setUser,user, nrInBasket, setNrInBasket, co
             setNrInBasket(nrInBasket + 1)
 
             setUser(tempUser)
-            console.log(coinsToSpend)
-            console.log(user.cards[cardIndex].stock)
-            console.log(user.cards[cardIndex].inBasket)
+
         }
 
     }
 
+    // Maps out all buyable cards
     return(
         <div className="productPage">
             {user.cards.map( c=>

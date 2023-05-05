@@ -1,5 +1,7 @@
 export default function CardLibrary({user}){
 
+    // The library shows which items the user has bought, they have no other function.
+
     const listItems = user.cards.map(c =>
         {if(c.bought > 0)
         return (
